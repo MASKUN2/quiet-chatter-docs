@@ -1,15 +1,50 @@
-# Quiet Chatter Documentation Repository
+# Quiet Chatter: You Belong Here
 
-이 리파지토리는 **Quiet Chatter** 프로젝트의 요구사항, 설계 및 기획 문서를 관리하기 위한 공간입니다.
+<img alt="Quiet Chatter Logo" height="200" src="https://quiet-chatter.com/images/quiet-chatter-icon2.png" width="200"/>
 
-## 📁 문서 구조
+> **"수줍음이 많은 사람들을 위한 독서 SNS"**
+>
+> Quiet Chatter는 내향적인 독자들이 책을 통해 서로의 생각에 조용히 공감할 수 있는 공간입니다.
+> 익명성과 휘발성을 통해 기록에 대한 부담을 덜고, 오직 '공감'만으로 소통하는 따뜻한 커뮤니티를 지향합니다.
 
-- `srs/`: 소프트웨어 요구사항 명세서 (Software Requirements Specification)
-- `api/`: API 설계 문서 및 엔드포인트 정의
-- `ui/`: 사용자 인터페이스(UI) 설계 및 UX 기획
-- `meetings/`: 프로젝트 관련 회의록 및 결정 사항 히스토리
+## 🔗 주요 링크
 
-## 🚀 시작하기
+| 구분 | Production (운영) | Development (개발) |
+| :--- | :--- | :--- |
+| **서비스 URL** | [https://quiet-chatter.com](https://quiet-chatter.com) | [https://dev.quiet-chatter.com](https://dev.quiet-chatter.com) |
+| **API 문서** | [https://api.quiet-chatter.com/docs](https://api.quiet-chatter.com/docs) | [https://dev-api.quiet-chatter.com/docs](https://dev-api.quiet-chatter.com/docs) |
 
-1. `srs/` 폴더의 템플릿을 사용하여 새로운 요구사항을 작성하세요.
-2. 각 문서의 변경 사항은 Pull Request(PR)를 통해 검토 후 반영합니다.
+## 📚 프로젝트 문서 (Documentation)
+
+이 리포지토리(`quiet-chatter-docs`)는 프로젝트의 기획, 정책, 히스토리를 관리하는 **Single Source of Truth**입니다.
+
+- **[📖 서비스 기획서 (Service Specification)](Service_Specification.md)**
+    - 서비스 개요, 핵심 가치, 기능 명세, 운영 정책 (기획자/비개발자 권장)
+- **[🏗 인프라 및 배포 정책 (Infrastructure Policy)](Infrastructure_Policy.md)**
+    - Staging 환경, CI/CD 파이프라인, 배포 프로세스 (개발자/DevOps 권장)
+- **[📜 프로젝트 연혁 (History)](Project_History.md)**
+    - 프로젝트의 시작부터 현재까지의 주요 의사결정 및 개발 이력
+- **[🚀 로드맵 (Roadmap)](Roadmap.md)**
+    - 향후 개발 예정 기능 및 개선 아이디어
+
+## 🛠 기술 스택 (Tech Stack)
+
+### Backend (`quiet-chatter`)
+- **Language**: Java 21
+- **Framework**: Spring Boot 3.x
+- **Database**: PostgreSQL, Redis
+- **Architecture**: Hexagonal Architecture
+
+### Frontend (`quiet-chatter-front-end`)
+- **Language**: TypeScript
+- **Framework**: React 19, Vite
+- **UI Library**: Material UI (MUI) v6
+- **State Management**: Context API, TanStack Query (Planned)
+
+## 🤝 기여하기 (Contributing)
+
+이 프로젝트는 오픈 소스로 운영되지 않지만, 팀 내 기여는 환영합니다.
+각 저장소의 `AGENTS.md` 및 `CONTRIBUTING.md`(있는 경우)를 참고해주세요.
+
+---
+© 2026 Quiet Chatter Team. All rights reserved.
