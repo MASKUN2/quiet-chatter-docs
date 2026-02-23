@@ -1,53 +1,53 @@
-# Future Roadmap & Ideas
+# 향후 로드맵 및 아이디어 (Roadmap)
 
-This document outlines the vision for the future of Quiet Chatter, including technical improvements, feature expansions, and better collaboration strategies.
+이 문서는 Quiet Chatter 프로젝트의 비전과 기술적 개선, 기능 확장, 그리고 협업 전략을 기록합니다.
 
-## 1. Frontend-Backend Collaboration & Productivity
+## 1. 프론트엔드-백엔드 협업 및 생산성
 
-### 1.1 Automated Type Sync (Done ✅)
-- **Goal**: Eliminate manual type definitions on the frontend.
-- **Solution**: Use `openapi-typescript` to generate TypeScript interfaces directly from the backend's OpenAPI JSON spec.
-- **Workflow**: `Backend Change -> CI/CD Spec Update -> Frontend 'npm run gen:types' -> Compile Error -> Fix`.
+### 1.1 자동화된 타입 동기화 (완료 ✅)
+- **목표**: 프론트엔드에서 수동으로 타입을 정의하는 비용을 제거합니다.
+- **해결책**: 백엔드의 OpenAPI JSON 명세로부터 TypeScript 인터페이스를 자동 생성하는 `openapi-typescript`를 도입합니다.
+- **워크플로우**: `백엔드 변경 -> CI/CD 명세 업데이트 -> 프론트엔드 'npm run gen:types' -> 컴파일 에러 발생 -> 즉시 수정`
 
-### 1.2 Visual Documentation (In Progress 🚧)
-- **Goal**: Provide a human-readable API reference.
-- **Tool**: Swagger UI or Redoc hosted at `/docs` or a separate subdomain.
-- **Benefit**: Easier onboarding for new developers and better communication between teams.
+### 1.2 API 시각화 (진행 중 🚧)
+- **목표**: 사람이 읽기 쉬운 API 레퍼런스를 제공합니다.
+- **도구**: `/docs` 엔드포인트 또는 별도 서브도메인에서 Swagger UI 또는 Redoc 호스팅.
+- **효과**: 신규 개발자 온보딩이 쉬워지고, 팀 간 커뮤니케이션 비용이 줄어듭니다.
 
-### 1.3 Breaking Change Detection (Planned 📅)
-- **Goal**: Prevent API changes from breaking the frontend build.
-- **Tool**: `openapi-diff` or `oasdiff` in the CI pipeline.
-- **Action**: If a breaking change is detected (e.g., field removal), fail the build or post a warning comment on the PR.
-
----
-
-## 2. Technical Improvements
-
-### 2.1 Performance Optimization
-- **Goal**: Improve initial load time and search responsiveness.
-- **Plan**:
-    - Implement **Server-Side Rendering (SSR)** or Static Site Generation (SSG) for SEO and faster First Contentful Paint (FCP).
-    - Introduce **CDN caching** for static assets and API responses where appropriate.
-    - Optimize database queries for complex aggregations (e.g., "Most Popular Talks").
-
-### 2.2 Scalability
-- **Goal**: Handle increased traffic and data volume.
-- **Plan**:
-    - **Database Sharding/Partitioning**: As the `Talk` table grows, partition it by date (since older talks are hidden).
-    - **Message Queue**: Introduce RabbitMQ or Kafka for asynchronous processing of "Like" events and notifications.
+### 1.3 변경 감지 및 알림 (계획됨 📅)
+- **목표**: API 변경으로 인해 프론트엔드 빌드가 깨지는 것을 사전에 방지합니다.
+- **도구**: CI 파이프라인에 `openapi-diff` 또는 `oasdiff` 도입.
+- **조치**: Breaking Change(예: 필드 삭제)가 감지되면 빌드를 실패시키거나 PR에 경고 코멘트를 자동으로 남깁니다.
 
 ---
 
-## 3. Feature Expansion
+## 2. 기술적 개선 (Technical Improvements)
 
-### 3.1 Mobile Application
-- **Goal**: Reach users on their preferred devices.
-- **Plan**: Develop a mobile app using **React Native** or **Flutter**, leveraging the existing REST API.
+### 2.1 성능 최적화
+- **목표**: 초기 로딩 속도와 검색 반응성을 개선합니다.
+- **계획**:
+    - **SSR (Server-Side Rendering)** 또는 SSG 도입으로 SEO 및 초기 렌더링(FCP) 속도 향상.
+    - 정적 자산 및 API 응답에 적절한 **CDN 캐싱** 적용.
+    - "가장 인기 있는 이야기"와 같은 복잡한 집계 쿼리 최적화.
 
-### 3.2 Personalized Recommendations
-- **Goal**: Move beyond random recommendations.
-- **Plan**: Implement collaborative filtering or content-based recommendation algorithms to suggest books based on a user's reading history and "Like" patterns.
+### 2.2 확장성 (Scalability)
+- **목표**: 트래픽 증가와 데이터 축적에 대비합니다.
+- **계획**:
+    - **DB 샤딩/파티셔닝**: `Talk` 테이블이 커짐에 따라 날짜별로 파티셔닝합니다 (오래된 글은 숨김 처리되므로 효과적).
+    - **메시지 큐**: RabbitMQ 또는 Kafka를 도입하여 "좋아요" 이벤트 처리나 알림 발송을 비동기화합니다.
 
-### 3.3 Enhanced "Quiet" Interactions
-- **Goal**: Add more ways to interact without breaking the "quiet" philosophy.
-- **Idea**: Allow users to send predefined "stickers" or "moods" as reactions, strictly without text comments.
+---
+
+## 3. 기능 확장 (Feature Expansion)
+
+### 3.1 모바일 애플리케이션
+- **목표**: 사용자가 선호하는 디바이스에서 더 쉽게 접근하도록 합니다.
+- **계획**: 기존 REST API를 활용하여 **React Native** 또는 **Flutter**로 모바일 앱을 개발합니다.
+
+### 3.2 개인화 추천
+- **목표**: 무작위 추천을 넘어 사용자의 취향에 맞는 책을 제안합니다.
+- **계획**: 사용자의 독서 이력과 "좋아요" 패턴을 기반으로 협업 필터링(Collaborative Filtering) 또는 콘텐츠 기반 추천 알고리즘을 도입합니다.
+
+### 3.3 확장된 "조용한" 상호작용
+- **목표**: "조용한" 철학을 해치지 않으면서 소통의 폭을 넓힙니다.
+- **아이디어**: 텍스트 댓글 없이 감정을 표현할 수 있는 미리 정의된 "스티커"나 "무드" 리액션을 추가합니다.

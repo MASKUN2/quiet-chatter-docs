@@ -1,31 +1,31 @@
-# Project History
+# 프로젝트 연혁 (Project History)
 
-Quiet Chatter: You Belong Here.
-This document tracks the journey of the Quiet Chatter project from its inception to the present.
+**Quiet Chatter: You Belong Here.**
+이 문서는 Quiet Chatter 프로젝트의 시작부터 현재까지의 여정, 주요 의사결정, 기술적 변화를 기록합니다.
 
-## 2025
+## 2025년
 
-### November: The Beginning (Woowa Tech Course Open Mission)
-- **2025-11-08**: **Initial Infrastructure Setup**. Started as an anonymous book review SNS. Chose Java 21, Spring Boot, PostgreSQL, Thymeleaf for rapid prototyping. Deployed on AWS LightSail with GitHub Actions CI/CD.
-- **2025-11-12**: **Testing Strategy**. Improved tests for external APIs (Naver Book Search) using `@RestClientTest` and `Instancio`.
-- **2025-11-15**: **Authentication Design**. Implemented custom session-based auth to support anonymous users ("Guest").
-- **2025-11-18**: **Performance Optimization**. Introduced "Delayed Write" strategy for Likes using background threads and JDBC Batch Update to handle high concurrency.
-- **2025-11-23**: **Refactoring**. Applied rate limiting (Nginx), reorganized packages by domain, and implemented caching for recommendations.
+### 11월: 시작 (우아한테크코스 프리코스 오픈 미션)
+- **2025-11-08**: **초기 인프라 구축**. 익명 독서 리뷰 SNS로 시작했습니다. 빠른 프로토타이핑을 위해 Java 21, Spring Boot, PostgreSQL, Thymeleaf를 선택했습니다. AWS LightSail에 배포하고 GitHub Actions로 CI/CD를 구축했습니다.
+- **2025-11-12**: **테스트 전략 개선**. 외부 API(네이버 도서 검색) 연동 테스트를 위해 `@RestClientTest`와 `Instancio`를 도입하여 테스트 신뢰성을 높였습니다.
+- **2025-11-15**: **인증 시스템 설계**. 익명 사용자("Guest")를 지원하기 위해 커스텀 세션 기반 인증을 구현했습니다.
+- **2025-11-18**: **성능 최적화**. "좋아요" 기능의 동시성 처리를 위해 백그라운드 스레드를 이용한 "지연 쓰기(Delayed Write)" 전략과 JDBC Batch Update를 도입했습니다.
+- **2025-11-23**: **리팩토링**. Nginx 레벨의 Rate Limiting을 적용하고, 도메인 주도 설계(DDD)에 맞춰 패키지 구조를 재편했습니다. 추천 기능을 위한 캐싱 전략도 구현했습니다.
 
 ---
 
-## 2026
+## 2026년
 
-### January: Transition to Modern Stack & Collaboration
-- **2026-01-20**: **Frontend Separation**. Decided to split the monolithic Thymeleaf app into a RESTful API Backend and a React Frontend (TypeScript + Vite) for better UX and maintainability.
-- **2026-01-21**: **Auth Overhaul**. Switched from Session-based auth to **JWT (Stateless)** for mobile compatibility. Introduced Redis for token management.
-- **2026-01-25**: **Domain Simplification**. Removed complex Value Objects for performance. Implemented the core **"Auto-Hidden" policy** (1-year expiration) using scheduled bulk updates.
-- **2026-01-26**: **Soft Delete & History**. Implemented "Soft Delete" (hiding data instead of removing it) and tracking modification times.
-- **2026-01-29**: **Infinite Scroll**. Added infinite scroll support for book search APIs (Backend) and implemented it on the Frontend using Intersection Observer.
-- **2026-01-30**: **API Documentation Automation**. Integrated Spring Rest Docs + Swagger (OpenAPI) to auto-generate API specs. Frontend set up `openapi-typescript` to auto-sync types.
+### 1월: 모던 스택 전환 및 협업 체계 구축
+- **2026-01-20**: **프론트엔드 분리**. 기존의 모놀리식(Thymeleaf) 구조에서 RESTful API 백엔드와 React 프론트엔드(TypeScript + Vite)로 분리하여 UX와 유지보수성을 개선했습니다.
+- **2026-01-21**: **인증 아키텍처 개편**. 모바일 호환성과 서버 무상태성(Stateless)을 위해 세션 기반 인증에서 **JWT 기반 인증**으로 전환했습니다. 토큰 관리를 위해 Redis를 도입했습니다.
+- **2026-01-25**: **도메인 단순화**. 성능을 위해 복잡한 Value Object(VO)를 제거했습니다. 핵심 정책인 **"자동 숨김(Auto-Hidden)"** (1년 경과 시 비공개) 기능을 스케줄링된 배치 작업으로 구현했습니다.
+- **2026-01-26**: **Soft Delete 및 이력 관리**. 데이터 삭제 시 물리적으로 지우지 않고 숨김 처리하는 "Soft Delete" 방식을 적용하고, 수정 시간을 추적하도록 변경했습니다.
+- **2026-01-29**: **무한 스크롤**. 백엔드 API에 페이징을 최적화하고, 프론트엔드에서 Intersection Observer API를 사용하여 끊김 없는 도서 검색 경험을 구현했습니다.
+- **2026-01-30**: **API 문서 자동화**. Spring Rest Docs와 Swagger(OpenAPI)를 연동하여 API 명세를 자동 생성하는 파이프라인을 구축했습니다. 프론트엔드에서는 `openapi-typescript`를 통해 타입을 자동 동기화하도록 설정했습니다.
 
-### February: Stabilization & Feature Expansion
-- **2026-02-01**: **Staging Environments**. Established separate `dev` and `prod` environments with distinct domains and databases.
-- **2026-02-10**: **Talk CRUD**. Completed full Create/Read/Update/Delete flow for Book Talks on the frontend.
-- **2026-02-15**: **Reaction UI**. Implemented "Like" and "Empathy" buttons with Optimistic Updates for instant feedback.
-- **2026-02-20**: **Automated Release Management**. Transitioned to **Semantic Release** based on Conventional Commits for automated versioning and changelog generation across both repositories.
+### 2월: 안정화 및 기능 확장
+- **2026-02-01**: **스테이징 환경 구축**. 개발(`dev`)과 운영(`prod`) 환경을 분리하고, 각각 별도의 도메인과 데이터베이스를 사용하도록 인프라를 구성했습니다.
+- **2026-02-10**: **Talk CRUD 완성**. 프론트엔드에서 이야기(Talk)의 작성, 조회, 수정, 삭제 전체 흐름을 구현했습니다.
+- **2026-02-15**: **리액션 UI**. "좋아요"와 "공감해요" 버튼을 구현하고, 낙관적 업데이트(Optimistic Update) 패턴을 적용하여 즉각적인 사용자 피드백을 제공했습니다.
+- **2026-02-20**: **배포 관리 자동화**. Conventional Commits를 기반으로 **Semantic Release**를 도입하여, 양쪽 리포지토리 모두에서 버전 관리와 변경 로그(Changelog) 생성을 자동화했습니다.

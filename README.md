@@ -18,13 +18,13 @@
 
 이 리포지토리(`quiet-chatter-docs`)는 프로젝트의 기획, 정책, 히스토리를 관리하는 **Single Source of Truth**입니다.
 
-- **[📖 서비스 기획서 (Service Specification)](Service_Specification.md)**
+- **[📖 서비스 기획서 (Service Specification)](service_specification.md)**
     - 서비스 개요, 핵심 가치, 기능 명세, 운영 정책 (기획자/비개발자 권장)
-- **[🏗 인프라 및 배포 정책 (Infrastructure Policy)](Infrastructure_Policy.md)**
+- **[🏗 인프라 및 배포 정책 (Infrastructure Policy)](infrastructure_policy.md)**
     - Staging 환경, CI/CD 파이프라인, 배포 프로세스 (개발자/DevOps 권장)
-- **[📜 프로젝트 연혁 (History)](Project_History.md)**
+- **[📜 프로젝트 연혁 (History)](project_history.md)**
     - 프로젝트의 시작부터 현재까지의 주요 의사결정 및 개발 이력
-- **[🚀 로드맵 (Roadmap)](Roadmap.md)**
+- **[🚀 로드맵 (Roadmap)](roadmap.md)**
     - 향후 개발 예정 기능 및 개선 아이디어
 
 ## 🛠 기술 스택 (Tech Stack)
