@@ -1,14 +1,55 @@
-# Agent Working Procedure
+# AI Agent Collaboration Task
 
-1. Review the code base and prepare for work based on the `## Developer's Requirements` section below.
-2. If the last section is a developer section like `## Developer's Requirements Update` or `## Developer's Review Response`, skip the middle and start from there.
-3. If you need a decision from the developer, add a section called `## Agent's Review Request` at the end of this file and stop working.
-4. When work is finished, add a section called `## Agent's Work Execution : {yyyy-MM-dd HH:mm}` at the end of this file and describe what you did.
-5. When updating documents, **do not delete or overwrite** existing sections. Always add new information to the **end** of the file.
-6. When making a plan, do not give multiple choices like "A or B". Specify **one clear implementation path**.
-7. For other general rules, check [ai_agent_guide.md](/docs/guide/ai_agent_guide.md).
+## 1. Common Instructions
 
-## Developer Requirements
+### Document Management Principles
+1. **Dynamic Sections (Top)**: Sections `2. Developer's Request` and `3. Agent's Response` should be continuously updated to reflect the current status.
+    - **Timestamp Requirement**: Whenever you update these sections, you **MUST** update the timestamp header using the format `[Last Updated: YYYY-MM-DD HH:mm]`.
+2. **Static History (Bottom)**: Section `4. History` is strictly **Append-Only**. Summarize key decisions and completed tasks here. **Do not modify or delete** existing history.
+
+### Working Procedure
+1. **One Clear Path**: When creating a plan, do not offer multiple choices like "A or B". Specify **one clear implementation path** based on project conventions and requirements, and explain your reasoning clearly.
+2. **Review Request**: If you need a decision or review from the developer, explicitly state **[Review Request]** at the end of the `3. Agent's Response` section and pause your work.
+3. **Reference First**: Always check `AGENTS.md` and the guides in `docs/guide/` before starting any task.
+4. **Context Update**: When a task is completed, summarize the `3. Agent's Response` content into `4. History`, and update `2. Developer's Request` with the next step.
+5. **Concise Formatting**: Avoid excessive bolding or highlighting. Keep descriptions and API specifications simple and readable.
+
+---
+
+## 2. Developer's Request
+### [Last Updated: YYYY-MM-DD HH:mm]
+
+> *Specific tasks for the agent to perform. This section will be updated with new content once the task is complete.*
+
 ### The core goal of this project
-- 우리는 quiet-chatter 서비스를 개발중이다. 이 프로젝트(quiet-chatter-docs)는 quiet-chatter 서비스의 기획 및 정책을 담고 있는 문서 저장소이다.현재 워크스페이스의 상위로 가면 이 프로젝트 경로의 형제 위치에 프론트엔드로서 quiet-chatter-front-end ,백엔드로서 quiet-chatter 프로젝트 디렉토리가 존재한다.
-- 이프로젝트의 목적은 요구사항을 명확히 하고, 이것이 실제 기능 구현에 이르기까지의 문서기반의 워크플로우를 담당하는 것이다.
+- We are developing the quiet-chatter service.
+- This project (`quiet-chatter-docs`) is the documentation repository containing the planning and policies for the service.
+- In the parent directory of this workspace, there are sibling directories: `quiet-chatter-front-end` (Frontend) and `quiet-chatter` (Backend).
+- The purpose of this project is to clarify requirements and handle the document-based workflow leading up to actual feature implementation.
+
+### [Current Objective]
+- (Describe the specific task here. e.g., Implement Domain Logic for My Page API Phase 1)
+
+---
+
+## 3. Agent's Response
+### [Last Updated: YYYY-MM-DD HH:mm]
+
+> *The agent's analysis, plan, and progress for the current task. The developer provides feedback based on this content.*
+
+### [Current Status] : (Analyzing / Developing / Review Requested / Completed)
+
+### [Analysis & Plan]
+1. (Detailed Implementation Plan Step 1 - One Clear Path)
+2. (Detailed Implementation Plan Step 2)
+
+### [Questions or Issues]
+- (List any questions or issues that need resolution)
+
+---
+
+## 4. History
+> *Chronological record of major project history. (Append Only)*
+
+### [YYYY-MM-DD HH:MM] Document Creation
+- Initialized AI collaboration task document and template setup.

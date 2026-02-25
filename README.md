@@ -41,10 +41,9 @@
 - **UI Library**: Material UI (MUI) v6
 - **State Management**: Context API, TanStack Query (Planned)
 
-## 🤝 기여하기 (Contributing)
+## 👥 팀
 
-이 프로젝트는 오픈 소스로 운영되지 않지만, 팀 내 기여는 환영합니다.
-각 저장소의 `AGENTS.md` 및 `CONTRIBUTING.md`(있는 경우)를 참고해주세요.
-
+- **개발**: 정인호
+- **기획**: 신정원
 ---
 © 2026 Quiet Chatter Team. All rights reserved.
